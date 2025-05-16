@@ -10,6 +10,7 @@ south_asia_labels <- south_asia %>%
   group_by(country) %>%
   filter(date == max(date))  # Get the latest year for each country
 
+# Plot with labels
 ggplot(data = south_asia, aes(x = date, y = life_exp, color = country)) +
   geom_line() +
   geom_text(data = south_asia_labels, aes(label = country), hjust = -0.1, size = 4) +
